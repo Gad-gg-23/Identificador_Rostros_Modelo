@@ -1,0 +1,25 @@
+datos:
+  raiz: "data"              # persona/set_xx/archivo.jpg, tras descargar_datos.py
+  rostros_raiz: "rostros"   # persona/set_xx/archivo.jpg ya recortados y alineados
+  sets_validacion_por_persona: 1   # sets completos reservados para validacion (no fotos sueltas)
+  tamano_imagen: 160
+  semilla: 42
+
+modelo:
+  embedding_dim: 512
+  arcface_margin: 0.5
+  arcface_escala: 64.0
+
+entrenamiento:
+  fase1_epocas: 8
+  fase2_epocas: 20
+  batch_size: 64
+  lr_fase1: 0.001
+  lr_fase2: 0.0001
+  weight_decay: 0.0005
+  paciencia_early_stopping: 5
+
+salida:
+  checkpoints: "checkpoints"
+  mejor_modelo: "checkpoints/mejor_modelo.pt"
+  log_csv: "checkpoints/historial_entrenamiento.csv"

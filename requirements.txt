@@ -1,0 +1,12 @@
+torch
+torchvision
+facenet-pytorch
+huggingface_hub
+pandas
+numpy
+scikit-learn
+matplotlib
+pillow
+tqdm
+pyyaml
+requests
