@@ -1,5 +1,8 @@
 # Identificador de Rostros - Modelo (Equipo propio)
 
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Gad-gg-23/Identificador_Rostros_Modelo/blob/main/colab/Entrenamiento_Modelo.ipynb)
+[![Abrir en Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Gad-gg-23/Identificador_Rostros_Modelo/blob/main/kaggle/Entrenamiento_Modelo_Kaggle.ipynb)
+
 Repo de **código del modelo** para la práctica de identificación de compañeros por
 rostro (ESCOM ML). Los datos (fotos) viven en un repo aparte, solo de datos:
 https://github.com/Gad-gg-23/Dataset-Identificador-Rostros-ESCOM
@@ -40,6 +43,8 @@ Identificador_Rostros_Modelo/
 │   └── inferir.py               # predice la identidad de una foto nueva
 ├── colab/
 │   └── Entrenamiento_Modelo.ipynb  # entrenamiento con GPU gratis de Colab
+├── kaggle/
+│   └── Entrenamiento_Modelo_Kaggle.ipynb  # mismo entrenamiento con GPU gratis de Kaggle
 └── checkpoints/              # NO va en git: mejor_modelo.pt, logs, graficas
 ```
 
@@ -56,7 +61,13 @@ python src/evaluar.py                      # accuracy + matriz de confusion
 python src/inferir.py --imagen foto.jpg    # predice una foto nueva
 ```
 
-Entrenar es pesado (requiere GPU): usa el notebook en `colab/` si no tienes una local.
+Entrenar es pesado (requiere GPU): usa el notebook en `colab/` o en `kaggle/` si no
+tienes una local (botones al inicio de este README).
+
+En Kaggle, antes de correr: activa **GPU** e **Internet** en *Settings* y agrega tu token
+de Hugging Face como secreto `HF_TOKEN` (*Add-ons > Secrets*). Usa *Save Version >
+Save & Run All* para que corra en segundo plano; los rostros y checkpoints quedan en el
+*Output* del notebook. Para reanudar una corrida cortada, agrega ese Output como *Input*.
 
 Si Colab se desconecta a medio entrenamiento, el notebook monta Google Drive y
 guarda ahí los rostros preprocesados y los checkpoints. Vuelve a correr el
