@@ -57,3 +57,8 @@ python src/inferir.py --imagen foto.jpg    # predice una foto nueva
 ```
 
 Entrenar es pesado (requiere GPU): usa el notebook en `colab/` si no tienes una local.
+
+Si Colab se desconecta a medio entrenamiento, el notebook monta Google Drive y
+guarda ahí los rostros preprocesados y los checkpoints. Vuelve a correr el
+notebook desde la celda de Drive y usa `python src/entrenar.py --resume` para
+continuar justo donde se quedó en vez de reiniciar desde la fase 1.
