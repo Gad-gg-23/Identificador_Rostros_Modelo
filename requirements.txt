@@ -10,3 +10,4 @@ pillow
 tqdm
 pyyaml
 requests
+gradio

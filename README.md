@@ -54,9 +54,15 @@ python src/preprocesar_rostros.py          # -> rostros/persona/set_xx/archivo.j
 python src/entrenar.py                     # -> checkpoints/mejor_modelo.pt
 python src/evaluar.py                      # accuracy + matriz de confusion
 python src/inferir.py --imagen foto.jpg    # predice una foto nueva
+python src/app.py                          # interfaz grafica (sube foto o usa camara)
 ```
 
 Entrenar es pesado (requiere GPU): usa el notebook en `colab/` si no tienes una local.
+
+`python src/app.py` abre una interfaz web local (Gradio) en
+http://127.0.0.1:7860 para subir una foto o usar la camara y ver la
+prediccion con barras de confianza, sin tener que usar la linea de comandos.
+No requiere GPU ni reentrenar nada, solo el checkpoint ya entrenado.
 
 Si Colab se desconecta a medio entrenamiento, el notebook monta Google Drive y
 guarda ahí los rostros preprocesados y los checkpoints. Vuelve a correr el
